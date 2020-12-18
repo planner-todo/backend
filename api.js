@@ -4,10 +4,6 @@ const app = express.Router()
 
 const todos = {}
 
-app.get('/', (req, res) => {
-    res.json('hello')
-})
-
 app.get('/uuid', (req, res) => {
     res.send(short.generate())
 })
