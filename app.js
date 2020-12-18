@@ -13,6 +13,9 @@ app.use(bodyParser.text())
 
 app.use(express.static('public/'))
 app.use('/api/', require('./api'))
+app.use((req, res) => {
+    res.status(404).sendFile(__dirname + '/public/error.html')
+})
 
 app.listen(PORT, () => {
     console.log(`Listening on port ${PORT}`)
